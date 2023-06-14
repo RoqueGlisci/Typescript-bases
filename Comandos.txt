@@ -1,0 +1,52 @@
+
+---instalacion global de typescript---
+npm install -g typescript
+tsc --version
+
+
+---crear una transpilacion a js---
+tsc app 
+tsc -> para transpilacion todos los archivos a js pero primero instala tsconfig
+tsc --watch -> para que transpilacion de forma automatica a js  
+tsc -w -> forma corta del watch
+
+
+---crear el tsconfig.json---
+tsc --init
+
+
+---archivo tsconfig--- 
+activar 1: el importante para ts el 2 y 3 no son necesarios
+"noImplicitAny": true, 
+"strictNullChecks": true,  
+
+activar 2: mapeo js
+"sourceMap": true, -> mapea las lineas de codigo de js a ts en el navegador
+"removeComments": true,  -> remueve los comentarios cuando se traspila a js
+
+activar 3: tsconfig crear un solo js para todo el proyecto
+"outFile": "./main.js",  -> crear carpeta prinsipal en el tsconfig
+"module": "amd", 
+se borra lodos los .js exepto el main.js y main.js.map
+
+
+opcional en tsconfig-> "exclude": ["carpeta/*.ts"] o "include": ["carpeta/*.ts"] -> agregar o quitar carpetas para la traspilacion
+
+
+---Teoria---
+Tipos de Datos:
+Primitivos: string, number, boolean, symbol
+Compuestos: Objetos literales, funciones, clases, array
+
+(() => { // es una funcion auto invocada
+
+})()
+
+
+--------------------------------------------------------------------
+---configuracion simple---
+0) si no esta instalado ts en la pc instalarlo
+1) tsc --init
+2) "noImplicitAny": true, 
+   "strictNullChecks": true, 
+3) tsc -w
